@@ -1,0 +1,44 @@
+# angelOS tokyonight / dark
+[colors.primary]
+background = '#1a1b26'
+foreground = '#c0caf5'
+
+[colors.cursor]
+text = '#1a1b26'
+cursor = '#7aa2f7'
+
+[colors.vi_mode_cursor]
+text = '#1a1b26'
+cursor = '#bb9af7'
+
+[colors.selection]
+text = '#1a1b26'
+background = '#7aa2f7'
+
+[colors.search.matches]
+foreground = '#1a1b26'
+background = '#bb9af7'
+
+[colors.search.focused_match]
+foreground = '#1a1b26'
+background = '#7aa2f7'
+
+[colors.normal]
+black   = '#1a1b26'
+red     = '#e36b78'
+green   = '#8eaf73'
+yellow  = '#d8b56b'
+blue    = '#bb9af7'
+magenta = '#7aa2f7'
+cyan    = '#72b7b0'
+white   = '#c0caf5'
+
+[colors.bright]
+black   = '#a9b1d6'
+red     = '#f58b98'
+green   = '#aacf93'
+yellow  = '#efd18b'
+blue    = '#bb9af7'
+magenta = '#7aa2f7'
+cyan    = '#92d7d0'
+white   = '#c0caf5'

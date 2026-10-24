@@ -1,0 +1,1 @@
+Yettalor personal desktop snapshot. Install with ./install.sh — do not run upstream setup from a foreign clone.

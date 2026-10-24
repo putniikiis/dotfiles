@@ -1,0 +1,244 @@
+{
+    "appearance": {
+        "autoWallpaperColors": true,
+        "blur": true,
+        "customAccent": "#c77dff",
+        "darkFrom": 20,
+        "disabledTemplates": [],
+        "flavor": "tokyonight",
+        "fontBody": "Roboto",
+        "fontMono": "FiraCode Nerd Font",
+        "fontScale": 1,
+        "fontTitle": "Roboto",
+        "language": "ru",
+        "lightFrom": 8,
+        "mode": "dark",
+        "opacity": 0.84,
+        "paletteScreen": "",
+        "px": 1,
+        "shadows": true,
+        "themeApps": false
+    },
+    "bar": {
+        "allWindows": false,
+        "compactOnVertical": true,
+        "hidden": [],
+        "layout": {},
+        "logoStyle": "classic",
+        "metaTap": true,
+        "metaTapFullscreen": false,
+        "metaTapMs": 400,
+        "screens": [],
+        "showMedia": true,
+        "showSeconds": false,
+        "showWindows": true,
+        "startLabel": "angelOS",
+        "style": "top",
+        "taskLabels": false,
+        "taskMaxWidth": 90,
+        "taskMinWidth": 40,
+        "tintTasks": false,
+        "trayTint": "accent",
+        "workspaceIcons": 3,
+        "workspaceStyle": "hearts"
+    },
+    "capture": {
+        "skin": "ropes",
+        "themeColors": false
+    },
+    "desktop": {
+        "initialized": true,
+        "snap": true,
+        "widgets": []
+    },
+    "developer": {
+        "anthropicModel": "claude-sonnet-4-6",
+        "claudeCliModel": "",
+        "codexCliModel": "",
+        "enabled": false,
+        "maxOutputTokens": 16000,
+        "openaiModel": "gpt-5.4",
+        "provider": "claude-cli"
+    },
+    "dotfiles": {
+        "command": "./install.sh",
+        "env": "DOTFILES_MODE=full SKIP_PACKAGES=1 INSTALL_VOXTYPE=0 DOWNLOAD_VOXTYPE_MODEL=0 ENABLE_SERVICES=0",
+        "reloadNiri": true,
+        "repo": "~/PixelStreetArt_Dotfiles_Niri"
+    },
+    "idle": {
+        "allScreens": true,
+        "clock": true,
+        "colors": "accent",
+        "effect": "random",
+        "minutes": 0,
+        "text": ""
+    },
+    "launcher": {
+        "terminal": "kitty",
+        "usage": {
+            "Happ": 1,
+            "blueman-manager": 1,
+            "chromium-clang-avx2-bin": 1,
+            "firefox": 4,
+            "htop": 1,
+            "io.missioncenter.MissionCenter": 1
+        }
+    },
+    "lock": {
+        "hearts": true,
+        "idleMinutes": 0,
+        "indicators": true,
+        "pixelate": false,
+        "reactions": true,
+        "stream": false,
+        "streamTitle": ""
+    },
+    "lyrics": {
+        "artwork": "note",
+        "enabled": true,
+        "offsetMs": 0,
+        "preferPlayer": "spotify",
+        "screens": [],
+        "sources": [
+            "lrclib",
+            "netease",
+            "ovh"
+        ],
+        "typewriter": true
+    },
+    "notifications": {
+        "dnd": false,
+        "maxPopups": 4,
+        "position": "top-right",
+        "screen": "",
+        "timeout": 6000
+    },
+    "osd": {
+        "enabled": true,
+        "layout": true,
+        "ms": 900,
+        "position": "bottom-center"
+    },
+    "plugins": {
+        "data": {
+            "speedtest": {
+                "history": [
+                    {
+                        "down": 60.83,
+                        "isp": "Unknown",
+                        "ping": 216.397,
+                        "server": "Dylan IT (Amsterdam)",
+                        "time": 1790711787915,
+                        "up": 9.28
+                    },
+                    {
+                        "down": 60.83,
+                        "isp": "Unknown",
+                        "ping": 216.397,
+                        "server": "Dylan IT (Amsterdam)",
+                        "time": 1790711787915,
+                        "up": 9.28
+                    }
+                ],
+                "day": 6500,
+                "night": 3900,
+                "walk": 15,
+                "run": 60,
+                "poll": 2,
+                "interval": 60
+            },
+            "claude-companion": {
+                "interval": 60,
+                "run": 60,
+                "walk": 15,
+                "night": 3900,
+                "poll": 2,
+                "day": 6500
+            },
+            "stream-stats": {
+                "day": 6500,
+                "night": 3900,
+                "walk": 15,
+                "run": 60,
+                "poll": 2,
+                "interval": 60
+            },
+            "codex-companion": {
+                "interval": 60,
+                "poll": 2,
+                "run": 60,
+                "walk": 15,
+                "night": 3900,
+                "day": 6500
+            },
+            "nightlight": {
+                "day": 6500,
+                "night": 3900,
+                "walk": 15,
+                "run": 60,
+                "poll": 2,
+                "interval": 60
+            },
+            "osu-mini": {
+                "interval": 60,
+                "poll": 2,
+                "run": 60,
+                "walk": 15
+            }
+        },
+        "enabled": {
+            "cat": false,
+            "nightlight": false,
+            "osu-mini": false,
+            "web-search": true,
+            "quick-actions": false
+        }
+    },
+    "setup": {
+        "complete": true
+    },
+    "sidebar": {
+        "edge": "right",
+        "enabled": false,
+        "offset": 0.5,
+        "screen": "",
+        "sections": [
+            "toggles",
+            "media",
+            "sound",
+            "system",
+            "ai"
+        ]
+    },
+    "system": {
+        "fileManager": "nautilus",
+        "monitor": "auto",
+        "monitorInTerminal": false,
+        "monitorProgram": "",
+        "nautilusDefaults": true,
+        "terminal": "kitty"
+    },
+    "voxtype": {
+        "indicator": "angelos",
+        "position": "bottom-center"
+    },
+    "wallpaper": {
+        "dir": "~/Pictures",
+        "duration": 750,
+        "fallback": "/home/yettalor/Pictures/Lain/wallhaven-0pom5m.jpg",
+        "maxBlock": 48,
+        "outputs": {},
+        "transition": "dither",
+        "workspaces": {}
+    },
+    "workspaces": {
+        "indicator": false,
+        "names": {},
+        "phrases": true,
+        "popupMode": "bar",
+        "popupMs": 650,
+        "popupPosition": "bottom-center",
+        "switchFx": "soft"
+    }
+}

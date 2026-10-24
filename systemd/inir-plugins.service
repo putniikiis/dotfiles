@@ -1,0 +1,15 @@
+[Unit]
+Description=iNiR plugins host (Quickshell)
+After=niri.service inir.service
+PartOf=niri.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/qs -c inir-plugins
+Restart=always
+RestartSec=3
+Environment=QT_SCALE_FACTOR=1
+Environment=QS_DISABLE_CRASH_HANDLER=1
+
+[Install]
+WantedBy=graphical-session.target

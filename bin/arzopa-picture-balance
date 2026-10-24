@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Balanced picture for ARZOPA-27 (HDMI-A-1) via DDC/CI.
+# Safe to re-run after unplug/replug.
+set -euo pipefail
+
+DISPLAY_NUM="${1:-1}"
+
+# Skip quietly if the portable monitor is unplugged.
+if ! ddcutil detect 2>/dev/null | grep -q 'ARZOPA-27'; then
+  exit 0
+fi
+
+ddcutil -d "$DISPLAY_NUM" setvcp 08 1 >/dev/null 2>&1 || true
+sleep 0.2
+ddcutil -d "$DISPLAY_NUM" setvcp 14 0x05 >/dev/null   # 6500 K
+ddcutil -d "$DISPLAY_NUM" setvcp 12 74 >/dev/null     # contrast (balanced punch)
+ddcutil -d "$DISPLAY_NUM" setvcp 10 45 >/dev/null     # brightness
+ddcutil -d "$DISPLAY_NUM" setvcp 87 2 >/dev/null      # sharpness (clear at 144 Hz)
+ddcutil -d "$DISPLAY_NUM" setvcp 16 70 >/dev/null     # R gain
+ddcutil -d "$DISPLAY_NUM" setvcp 18 70 >/dev/null     # G gain
+ddcutil -d "$DISPLAY_NUM" setvcp 1A 70 >/dev/null     # B gain
+ddcutil -d "$DISPLAY_NUM" setvcp 6C 50 >/dev/null     # R black
+ddcutil -d "$DISPLAY_NUM" setvcp 6E 50 >/dev/null     # G black
+ddcutil -d "$DISPLAY_NUM" setvcp 70 50 >/dev/null     # B black
+ddcutil -d "$DISPLAY_NUM" scs >/dev/null 2>&1 || true

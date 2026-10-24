@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cmd="${1:-settings}"
+case "$cmd" in
+  settings|studio)
+    # iNiR settings only (plugins page) — no separate angelOS settings window
+    export QS_SETTINGS_PAGE=28
+    if command -v inir >/dev/null 2>&1; then
+      exec inir settings-window
+    fi
+    exec qs -p "${XDG_CONFIG_HOME:-$HOME/.config}/quickshell/inir" ipc call settings open
+    ;;
+  reload)
+    if systemctl --user restart inir-plugins.service; then
+      exit 0
+    fi
+    pkill -x -f '^/usr/bin/qs -c inir-plugins' 2>/dev/null || true
+    sleep 0.3
+    exec /usr/bin/qs -c inir-plugins
+    ;;
+  *)
+    echo "Usage: inir-plugins [settings|studio|reload]" >&2
+    exit 1
+    ;;
+esac

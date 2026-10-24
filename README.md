@@ -17,6 +17,57 @@
 
 ---
 
+## Quick start
+
+```bash
+git clone git@github.com:putniikiis/dotfiles.git
+cd dotfiles
+chmod +x install.sh
+./install.sh
+```
+
+Скрипт ставит пакеты из `packages.txt`, копирует конфиги в `~/.config`, подставляет `$HOME` пользователя и **генерирует мониторы под текущее железо**. Старые файлы сохраняются в `~/.local/state/niri-dots/backups/`.
+
+После установки — сессия **Niri**. Если iNiR ещё не в `PATH`, поставь его отдельно (AUR/git), затем:
+
+```bash
+./install.sh --configs
+```
+
+---
+
+## Installer
+
+`install.sh` рассчитан на **чужое устройство**: не копирует слепо `eDP`/`HDMI` автора, а читает DRM и собирает `90-user-extra.kdl`.
+
+| Команда | Назначение |
+|---------|------------|
+| `./install.sh` | Полная установка (пакеты + конфиги + systemd) |
+| `./install.sh --packages` | Только `pacman` из `packages.txt` |
+| `./install.sh --configs` | Только конфиги + автодетект мониторов |
+| `./install.sh --fix-outputs` | Пересобрать выходы после смены мониторов |
+| `./install.sh --detect-only` | Показать JSON детекта (без записи) |
+| `./install.sh --validate` | Проверить `niri validate` |
+
+### Что делает автоматически
+
+1. **Детект выходов** — `/sys/class/drm` + `edid-decode` (если есть): connector, режим, scale, позиция слева направо.
+2. **Scale** — по PPI из EDID; для ноутбуков 2.8K без EDID size — ~1.5; для обычного QHD/FHD — 1.
+3. **Пути** — все `/home/<кто-то>/…` в конфигах заменяются на `$HOME` текущего пользователя.
+4. **Validate + fix** — `niri validate`; при ошибке снижает scale до 1, затем минимальный stub на `eDP-1`.
+5. **Опционально** — `arzopa-picture-balance` и Muslim Reminder подключаются только если бинарники уже есть.
+6. **Обои** — абсолютные пути к несуществующим файлам в `inir` config очищаются.
+
+Переменная окружения:
+
+```bash
+NIRI_KB_LAYOUT=us ./install.sh --fix-outputs   # по умолчанию us,ru
+```
+
+Не запускай от root. `sudo` нужен только для `pacman`.
+
+---
+
 ## Preview
 
 | Desktop | Overview |
@@ -60,7 +111,7 @@
 ## Keybindings
 
 `Mod` = Super/Win. Полный список в сессии: **Mod+/** (iNiR cheatsheet).  
-Конфиг: `configs/niri/config.d/70-binds.kdl`, личное — `90-user-extra.kdl`.
+Конфиг: `configs/niri/config.d/70-binds.kdl`, личное — `90-user-extra.kdl` (генерируется установщиком).
 
 ### Applications
 
@@ -106,7 +157,7 @@
 |------|--------|
 | `Mod+L` | Lock |
 | `Mod+Shift+Q` / `Ctrl+Alt+Delete` | Session menu |
-| `Mod+Ctrl+O` | Quran Reminder |
+| `Mod+Ctrl+O` | Quran Reminder (если установлен) |
 
 ---
 
@@ -114,18 +165,22 @@
 
 ```text
 dotfiles/
-├── README.md
-└── media/
-    └── screenshots/     # HDMI captures (ARZOPA 27″)
+├── install.sh                 # установщик + адаптация под устройство
+├── packages.txt               # pacman-зависимости
+├── scripts/
+│   └── detect-outputs.py      # DRM/EDID → Niri output blocks
+├── configs/                   # niri, kitty, fish, inir, portals, …
+├── quickshell/inir-plugins/   # host плагинов
+├── systemd/                   # inir + inir-plugins (user units)
+├── bin/                       # вспомогательные скрипты
+└── media/screenshots/         # превью HDMI
 ```
-
-Полный инсталлятор и конфиги живут в локальном пакете **Yettalor-Niri-Dots** (`./install.sh`).  
-Этот репозиторий — превью и документация снимка рабочего стола.
 
 ---
 
 ## Notes
 
-- Мониторы и DPI править под себя в `90-user-extra.kdl` после установки.
-- Не запускать upstream `setup` из чужого клона поверх этого снапшота.
-- Экспорт: `2026-10-05` · niri `26.04`.
+- После смены мониторов: `./install.sh --fix-outputs`.
+- Не запускай upstream `setup` из чужого клона поверх этого снапшота.
+- iNiR в этот репозиторий не вендорится (тяжёлый); нужен установленный `inir` / `qs`.
+- Экспорт снимка: `2026-10-05` · niri `26.04`.

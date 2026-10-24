@@ -1,0 +1,10 @@
+# Local / heavy artefacts — not part of the portable install
+shell/
+dotfiles/
+.directory
+*.bak
+*.backup
+media/video/
+__pycache__/
+*.pyc
+.DS_Store

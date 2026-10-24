@@ -1,98 +1,131 @@
+<div align="center">
+
 # Niri Dots
 
-Личный снапшот рабочего стола: **Niri** + **iNiR** + **Kitty** + плагины.  
-Только мой конфиг — без чужих waybar/minimal-стеков.
+**Arch Linux** · [Niri](https://github.com/YaLTeR/niri) · [iNiR](https://github.com/snowarch/inir) · Kitty
 
-Снято с внешнего монитора **ARZOPA 27″ HDMI · 2560×1440@144**.
+Личный снапшот рабочего стола — один конфиг, без чужих waybar/minimal-стеков.
 
-## Скриншоты (HDMI)
+[![Niri](https://img.shields.io/badge/Niri-26.04-5E9FD6?style=flat-square)](https://github.com/YaLTeR/niri)
+[![Shell](https://img.shields.io/badge/Shell-iNiR-8B5CF6?style=flat-square)](https://github.com/snowarch/inir)
+[![Terminal](https://img.shields.io/badge/Terminal-Kitty-714FDD?style=flat-square)](https://sw.kovidgoyal.net/kitty/)
+[![Distro](https://img.shields.io/badge/Arch-Linux-1793D1?style=flat-square&logo=archlinux&logoColor=white)](https://archlinux.org/)
 
-### Пустой рабочий стол
+Снято с **ARZOPA 27″** · HDMI · `2560×1440@144`
 
-![Desktop](media/screenshots/01-desktop-arzopa.png)
+</div>
 
-### Overview
+---
 
-![Overview](media/screenshots/03-overview.png)
+## Preview
 
-### Launcher
+| Desktop | Overview |
+|:-------:|:--------:|
+| ![Desktop](media/screenshots/01-desktop-arzopa.png) | ![Overview](media/screenshots/03-overview.png) |
+| *Пустой стол (HDMI)* | *Niri overview* |
 
-![Launcher](media/screenshots/04-launcher.png)
+| Launcher | Control panel |
+|:--------:|:-------------:|
+| ![Launcher](media/screenshots/04-launcher.png) | ![Control panel](media/screenshots/07-control-panel.png) |
+| *iNiR overview / apps* | *Быстрые настройки* |
 
-### Настройки iNiR (Plugins)
+| Settings | Terminal |
+|:--------:|:--------:|
+| ![Settings](media/screenshots/05-settings-inir.png) | ![Kitty](media/screenshots/06-terminal-kitty.png) |
+| *iNiR · Plugins* | *Kitty + fish + fastfetch* |
 
-![Settings](media/screenshots/05-settings-inir.png)
+<p align="center">
+  <img src="media/screenshots/02-desktop-laptop.png" alt="Laptop eDP" width="720" />
+  <br />
+  <sub>Ноутбук · eDP · пустой workspace</sub>
+</p>
 
-### Kitty
+---
 
-![Kitty](media/screenshots/06-terminal-kitty.png)
+## Stack
 
-### Control panel
-
-![Control panel](media/screenshots/07-control-panel.png)
-
-### Ноутбук (eDP, пустой workspace)
-
-![Laptop](media/screenshots/02-desktop-laptop.png)
-
-## Бинды
-
-Источник правды: `configs/niri/config.d/70-binds.kdl` + личные оверрайды в `90-user-extra.kdl`.  
-Полный список в сессии: **Mod+/** (cheatsheet iNiR).
-
-| Клавиши | Действие |
-|---------|----------|
-| Mod+T / Mod+Return | Терминал (Kitty) |
-| Mod+Space | Overview / лаунчер iNiR |
-| Mod+Tab | Overview Niri |
-| Super+W | Браузер |
-| Super+E | Файлы (Nautilus) |
-| Mod+V | Буфер обмена |
-| Mod+, | Настройки iNiR |
-| Mod+Ctrl+P | Плагины (settings page) |
-| Mod+/ | Шпаргалка биндов |
-| Mod+Shift+S / Ctrl+Shift+S | Скрин региона |
-| Print / Ctrl+Print / Alt+Print | Скрин / экран / окно |
-| Mod+Shift+R | Запись экрана со звуком |
-| Mod+Q | Закрыть окно |
-| Mod+D | Maximize column |
-| Mod+F | Fullscreen |
-| Mod+L | Lock (личный оверрайд) |
-| Mod+Shift+Q / Ctrl+Alt+Delete | Меню сессии |
-| Super+G | Overlay (заметки/тулзы) |
-| Ctrl+Alt+T | Выбор обоев |
-| Mod+1…9 | Воркспейсы |
-| Mod+Ctrl+O | Quran Reminder |
-
-## Установка
-
-```bash
-cd ~/Desktop/Yettalor-Niri-Dots
-chmod +x install.sh
-./install.sh
-```
-
-Ставит пакеты из `packages.txt`, шелл, Niri `config.d`, Kitty/fish/portals и `inir-plugins` **как на этой машине**.
-
-После установки — сессия Niri. Мониторы в `configs/niri/config.d/90-user-extra.kdl` поправь под себя.
-
-## Стек
-
-| Компонент | Выбор |
-|-----------|--------|
-| Compositor | Niri |
-| Shell | iNiR (Quickshell) |
-| Terminal | Kitty |
+| Layer | Choice |
+|-------|--------|
+| Compositor | **Niri** 26.04 |
+| Desktop shell | **iNiR** (Quickshell) |
+| Terminal | **Kitty** |
+| Shell | fish + Starship |
 | Icons | Papirus-Dark |
 | Cursor | capitaine-cursors-light |
-| Portals | gnome ScreenCast + gtk |
+| Portals | xdg-desktop-portal-gnome (ScreenCast) + gtk |
 | Plugins | `quickshell/inir-plugins` |
 
-## Структура
+---
 
-- `configs/` — niri, kitty, fish, qt6ct, portals, inir `config.json`
-- `shell/` — снапшот iNiR без `.git`
-- `quickshell/inir-plugins/` — host плагинов
-- `systemd/` — `inir` + `inir-plugins`
-- `bin/` — вспомогательные скрипты
-- `media/screenshots/` — скрины HDMI
+## Keybindings
+
+`Mod` = Super/Win. Полный список в сессии: **Mod+/** (iNiR cheatsheet).  
+Конфиг: `configs/niri/config.d/70-binds.kdl`, личное — `90-user-extra.kdl`.
+
+### Applications
+
+| Keys | Action |
+|------|--------|
+| `Mod+T` / `Mod+Return` | Terminal (Kitty) |
+| `Super+W` | Browser |
+| `Super+E` | Files (Nautilus) |
+| `Mod+Space` | iNiR overview / launcher |
+| `Mod+Tab` | Niri overview |
+
+### Shell & UI
+
+| Keys | Action |
+|------|--------|
+| `Mod+,` | iNiR settings |
+| `Mod+Ctrl+P` | Plugins page |
+| `Mod+/` | Cheatsheet |
+| `Mod+V` | Clipboard history |
+| `Super+G` | Overlay tools |
+| `Ctrl+Alt+T` | Wallpaper picker |
+
+### Windows & workspaces
+
+| Keys | Action |
+|------|--------|
+| `Mod+Q` | Close window |
+| `Mod+D` | Maximize column |
+| `Mod+F` | Fullscreen |
+| `Mod+1` … `Mod+9` | Focus workspace |
+
+### Capture & media
+
+| Keys | Action |
+|------|--------|
+| `Mod+Shift+S` / `Ctrl+Shift+S` | Region screenshot |
+| `Print` / `Ctrl+Print` / `Alt+Print` | Screen / output / window |
+| `Mod+Shift+R` | Record with sound |
+
+### Session
+
+| Keys | Action |
+|------|--------|
+| `Mod+L` | Lock |
+| `Mod+Shift+Q` / `Ctrl+Alt+Delete` | Session menu |
+| `Mod+Ctrl+O` | Quran Reminder |
+
+---
+
+## Layout
+
+```text
+dotfiles/
+├── README.md
+└── media/
+    └── screenshots/     # HDMI captures (ARZOPA 27″)
+```
+
+Полный инсталлятор и конфиги живут в локальном пакете **Yettalor-Niri-Dots** (`./install.sh`).  
+Этот репозиторий — превью и документация снимка рабочего стола.
+
+---
+
+## Notes
+
+- Мониторы и DPI править под себя в `90-user-extra.kdl` после установки.
+- Не запускать upstream `setup` из чужого клона поверх этого снапшота.
+- Экспорт: `2026-10-05` · niri `26.04`.

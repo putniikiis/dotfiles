@@ -1,4 +1,4 @@
-# Yettalor Niri Dots
+# Niri Dots
 
 Личный снапшот рабочего стола: **Niri** + **iNiR** + **Kitty** + плагины.  
 Только мой конфиг — без чужих waybar/minimal-стеков.

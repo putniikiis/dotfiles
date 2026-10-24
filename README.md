@@ -5,14 +5,6 @@
 
 Снято с внешнего монитора **ARZOPA 27″ HDMI · 2560×1440@144**.
 
-## Видео
-
-Тур по столу (~17 с): пустой desktop → overview → launcher → Kitty → настройки iNiR.
-
-[media/video/desktop-tour.mp4](media/video/desktop-tour.mp4)
-
-<video src="media/video/desktop-tour.mp4" controls width="100%"></video>
-
 ## Скриншоты (HDMI)
 
 ### Пустой рабочий стол
@@ -103,5 +95,4 @@ chmod +x install.sh
 - `quickshell/inir-plugins/` — host плагинов
 - `systemd/` — `inir` + `inir-plugins`
 - `bin/` — вспомогательные скрипты
-- `media/` — скрины и видео
-# dotfiles
+- `media/screenshots/` — скрины HDMI
